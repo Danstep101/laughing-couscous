@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danil | Root Access</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+</head>
+<body>
+    <div class="scanlines"></div>
+
+    <div class="container">
+        <div class="terminal">
+            <h1 class="glitch" data-text=">_DANIL">>_DANIL</h1>
+            <div id="typewriter">
+                <p><span class="prompt">root@kiselevsk:~$</span> whoami</p>
+                <p class="output">Dev / Ubuntu Admin / 15 y.o.</p>
+
+                <p><span class="prompt">root@kiselevsk:~$</span> cat skills.txt</p>
+                <p class="output">> Stack: Python, Kotlin, Android Studio<br>> VR: Meta Quest 3S<br>> Gaming: Dota 2, Minecraft</p>
+
+                <p><span class="prompt">root@kiselevsk:~$</span> ./load_avatar.sh <span class="blink">_</span></p>
+            </div>
+        </div>
+
+        <div class="model-wrapper">
+            <div class="model-frame">
+                <model-viewer
+                    src="model.glb"
+                    alt="Моя 3D модель"
+                    auto-rotate
+                    camera-controls
+                    disable-zoom
+                    rotation-per-second="-30deg"
+                    shadow-intensity="1"
+                    environment-image="neutral">
+                </model-viewer>
+            </div>
+            <div class="cyber-decor">AVATAR_SYS_ACTIVE // PORT: 8080</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

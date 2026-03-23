@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap');
+
+:root {
+    --bg-color: #050505;
+    --main-color: #00ff41; /* Хакерский зеленый */
+    --glow: 0 0 10px #00ff41, 0 0 20px #00ff41;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--main-color);
+    font-family: 'Fira Code', monospace;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Эффект полос старого монитора */
+.scanlines {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    background-size: 100% 4px, 6px 100%;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100vh;
+    padding: 0 40px;
+}
+
+/* Стили терминала */
+.terminal {
+    flex: 1;
+    max-width: 500px;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: var(--glow);
+}
+
+.prompt { color: #fff; }
+.output { color: #00cc33; margin-left: 15px; margin-bottom: 20px; opacity: 0.8; }
+.blink { animation: blinker 1s linear infinite; }
+
+@keyframes blinker {
+    50% { opacity: 0; }
+}
+
+/* Контейнер для 3D модели */
+.model-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.model-frame {
+    width: 400px;
+    height: 500px;
+    border: 2px solid var(--main-color);
+    box-shadow: var(--glow);
+    position: relative;
+    background: rgba(0, 255, 65, 0.05);
+}
+
+/* Декоративные углы рамки */
+.model-frame::before, .model-frame::after {
+    content: ''; position: absolute; width: 20px; height: 20px; border: 2px solid #fff;
+}
+.model-frame::before { top: -2px; left: -2px; border-right: none; border-bottom: none; }
+.model-frame::after { bottom: -2px; right: -2px; border-left: none; border-top: none; }
+
+model-viewer {
+    width: 100%;
+    height: 100%;
+    --poster-color: transparent;
+}
+
+.cyber-decor {
+    margin-top: 10px;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    opacity: 0.7;
+}
